@@ -65,8 +65,23 @@
     </table>
 </div>
 </div>
-
 <script>
+    // Default export is a4 paper, portrait, using milimeters for units
+
+    var doc = new jsPDF();
+
+    doc.canvas.height = window.innerHeight;
+    doc.canvas.width = window.innerWidth;
+    html2pdf(document.body, doc, function(doc){
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('style','right:0; top:0; bottom:0; height:100%; width:500px');
+        document.body.appendChild(iframe);
+        iframe.src = doc.output('datauristring');
+    });
+
+    doc.save('a4.pdf')
+</script>
+<!--<script>
     var fs = require('fs');
     var pdf = require('html-pdf');
     var html = fs.readFileSync('./test/business.html', 'utf8');
@@ -77,3 +92,4 @@
         console.log(res); // { filename: '/app/businesscard.pdf' }
     });
 </script>
+-->

@@ -14,7 +14,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css" />
     <script type="application/javascript" src="js/modernizer.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+    <script src="https://cdn.rawgit.com/MrRio/jsPDF/master/libs/html2pdf.js"></script>
     <script>
         $( function() {
             $( ".datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
